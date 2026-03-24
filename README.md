@@ -11,6 +11,11 @@ This project loads product data, processes text features (name, category, descri
 * Integrates Word2Vec embeddings for semantic matching
 * Uses a Flask web front‑end to display results
 
+**📊 Tech stack**
+- Python, Flask
+- NLTK, Gensim (Word2Vec)
+- Scikit‑learn (cosine similarity)
+  
 **🚀 Demo**
 
 When the user enters a product query on the homepage, the app:
