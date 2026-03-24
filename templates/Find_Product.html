@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Top Rated Amazon Products</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        input[type=text] { width: 300px; padding: 5px; }
+        button { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h3>Find Top Rated Amazon Product</h3>
+
+    <form method="post">
+        <input type="text" name="product" placeholder="Search the product name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if result %}
+        <h4>Top Recommendations:</h4>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Details</th>
+                <th>Discount Price</th>
+                <th>Actual Price</th>
+                <th>Rating</th>
+                <th>Link</th>
+            </tr>
+            {% for item in result %}
+            <tr>
+
+                <td>{{ item['Product'] }}</td>
+                <td>{{ item['Details'] }}</td>
+                <td>{{ item['Discount_Price'] }}</td>
+                <td>{{ item['Actual_price'] }}</td>
+                <td>{{ item['Rating'] }}</td>
+                <td><a href="{{ item['Link'] }}" target="_blank">Buy</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
