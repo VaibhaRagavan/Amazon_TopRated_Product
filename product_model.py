@@ -65,7 +65,7 @@ for i in range(len(data)):
 from gensim.models import Word2Vec
 import numpy as np
 #word to vector
-W2v=Word2Vec(processed_data,vector_size=100,window=5,seed=40,workers=1)
+W2v=Word2Vec(processed_data,vector_size=100,window=5,seed=40,workers=1) #seed and workerto avoid random result everytime
     
 
 #sentence to vector 
@@ -103,7 +103,7 @@ def result(k):
     ## weighted simillarity
     weighted_score=[0.7*sim +0.3*r for sim, r in zip(recommendation,rating_normalized)]
     ##getting top 10 products
-    top_index=np.argsort(weighted_score)[-10:][::-1]
+    top_index=np.argsort(weighted_score)[-25:][::-1]
  
     result=[]  
     for id in top_index:
