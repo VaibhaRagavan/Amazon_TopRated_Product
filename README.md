@@ -41,3 +41,10 @@ When the user enters a product query on the homepage, the app:
 Search for: Wireless headphones
 
 The app returns the top 10 products from amazon_dataset.csv that are most semantically similar and have high ratings.
+
+---
+
+## ⚠️ Known Limitations
+
+- Word2Vec embeddings are recomputed on every app startup rather than cached — acceptable for a demo, but a production version would precompute and persist embeddings (e.g. to a vector store) rather than rebuild them on each restart.
+- Dataset sourced from [Kaggle Amazon product dataset link] — used here for learning/demo purposes only.
