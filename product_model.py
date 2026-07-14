@@ -103,7 +103,7 @@ def result(k):
     ## weighted simillarity
     weighted_score=[0.7*sim +0.3*r for sim, r in zip(recommendation,rating_normalized)]
     ##getting top 10 products
-    top_index=np.argsort(weighted_score)[-25:][::-1]
+    top_index=np.argsort(weighted_score)[-10:][::-1]
  
     result=[]  
     for id in top_index:
